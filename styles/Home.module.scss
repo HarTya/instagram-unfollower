@@ -1,0 +1,123 @@
+@import 'variables.scss';
+
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        animation: main 1s forwards ease-in-out;
+
+        @keyframes main {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $accent-color;
+            border-radius: 0.5vw;
+            margin-bottom: 2vw;
+            transition: box-shadow 0.4s ease-in-out;
+            box-shadow: 0 0 1vw $accent-color;
+
+            &:focus,
+            &:hover {
+                box-shadow: 0 0 5vw $accent-color;
+                outline: none;
+            }
+
+            input {
+                width: 100%;
+                font-size: 1.5vw;
+                padding: 0.75vw 1vw;
+                border-radius: 0.5vw;
+                background-color: transparent;
+                border: none;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::placeholder {
+                    color: $text-color;
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        div[id='input-password'] {
+            input {
+                padding: 0.75vw 0 0.75vw 1vw;
+                border-radius: 0.5vw 0 0 0.5vw;
+            }
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                border-radius: 0 0.5vw 0.5vw 0;
+                padding: 0.75vw 1vw;
+                transition: opacity 0.2s ease-in-out;
+
+                &[id='disabled'] {
+                    opacity: 0.5;
+                    pointer-events: none;
+                }
+
+                &[id='active'] {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            font-size: 1.5vw;
+            padding: 0.75vw 1vw;
+            width: 100%;
+            background-color: $accent-color;
+            border-radius: 0.5vw;
+            transition: box-shadow 0.4s ease-in-out, opacity 0.2s ease-in-out;
+            box-shadow: 0 0 1vw $accent-color;
+
+            &:hover {
+                box-shadow: 0 0 5vw $accent-color;
+            }
+            &:focus {
+                outline: none;
+            }
+
+            &::selection {
+                background-color: transparent;
+            }
+
+            &[id='disabled'] {
+                opacity: 0.5;
+                pointer-events: none;
+                box-shadow: none;
+            }
+
+            &[id='active'] {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+}

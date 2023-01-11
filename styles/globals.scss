@@ -1,0 +1,94 @@
+@import 'variables.scss';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: $text-color;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    letter-spacing: 0.05vw;
+
+    &::selection {
+        background-color: $main-color;
+    }
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $main-color;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.error {
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    max-height: 25vh;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    bottom: 2.5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1vw;
+    font-weight: 600;
+    background-color: $error-color;
+    border-radius: 0.5vw;
+    font-size: 1.5vw;
+    padding: 0.75vw;
+    transition: box-shadow 0.4s ease-in-out, opacity 0.2s ease-in-out;
+    box-shadow: 0 0 2vw $error-color;
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover {
+        box-shadow: 0 0 3vw $error-color;
+    }
+}
+
+.response {
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    max-height: 25vh;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    bottom: 2.5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1vw;
+    font-weight: 600;
+    background-color: $response-color;
+    border-radius: 0.5vw;
+    font-size: 1.5vw;
+    padding: 0.75vw;
+    transition: box-shadow 0.4s ease-in-out, opacity 0.2s ease-in-out;
+    box-shadow: 0 0 2vw $response-color;
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover {
+        box-shadow: 0 0 3vw $response-color;
+    }
+}
