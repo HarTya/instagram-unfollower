@@ -14,7 +14,7 @@ export default async (req: NextApiRequest, res: NextApiResponseServerIO) => {
         console.log('New Socket.io server...');
         const httpServer: NetServer = res.socket.server as any;
         const io = new ServerIO(httpServer, {
-            path: '/api/socket',
+            path: '/api/socket'
         });
         res.socket.server.io = io;
     }

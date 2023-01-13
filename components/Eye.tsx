@@ -1,22 +1,15 @@
 export default function Eye({
-    size = '46px',
-    strokeWidth = 2,
-    color = 'currentColor',
-    close = true,
-    ...props
+    close = true
 }) {
     return (
         <svg
-            width={size}
-            height={size}
             fill='none'
-            stroke={color}
+            stroke='currentColor'
             strokeLinecap='round'
             strokeLinejoin='round'
-            strokeWidth={strokeWidth}
+            strokeWidth='2'
             viewBox='0 0 24 24'
             xmlns='http://www.w3.org/2000/svg'
-            {...props}
         >
             {close
                 ?

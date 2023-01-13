@@ -45,11 +45,11 @@ export default function Home() {
     useEffect((): any => {
         const base_url = process.env.BASE_URL;
         const socket = connect(`${base_url}`, {
-            path: '/api/socket',
+            path: '/api/socket'
         });
 
         socket.on('connect', () => {
-            console.log('SOCKET CONNECTED!', socket.id);
+            console.log('SOCKET CONNECTED!');
         });
 
         socket.on('loggedInError', (text: string) => {
@@ -91,12 +91,16 @@ export default function Home() {
 
     useEffect(() => {
         setResponse({ ...response, visible: false });
-    }, [error.visible])
+    }, [error.visible]);
+
+    useEffect(() => {
+        setError({ ...error, visible: false });
+    }, [response.visible]);
 
     return (
         <div className={styles.home}>
             <main>
-                <div>
+                <div id='input-username'>
                     <input
                         autoFocus
                         value={data.username}
@@ -135,7 +139,7 @@ export default function Home() {
                         id={!data.password ? 'disabled' : 'active'}
                         onClick={() => setIsPasswordVisible(!isPasswordVisible)}
                     >
-                        <Eye size={'2vw'} close={!isPasswordVisible} />
+                        <Eye close={!isPasswordVisible} />
                     </span>
                 </div>
                 <button
