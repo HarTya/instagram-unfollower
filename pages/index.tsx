@@ -93,10 +93,6 @@ export default function Home() {
         setResponse({ ...response, visible: false });
     }, [error.visible]);
 
-    useEffect(() => {
-        setError({ ...error, visible: false });
-    }, [response.visible]);
-
     return (
         <div className={styles.home}>
             <main>
