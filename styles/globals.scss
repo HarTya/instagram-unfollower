@@ -92,6 +92,10 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+    * {
+        letter-spacing: 0.1vw!important;
+    }
+
     div[id='input-username'] {
         border-radius: 1vw!important;
         margin-bottom: 4vw!important;

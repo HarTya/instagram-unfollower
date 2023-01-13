@@ -149,18 +149,18 @@ export default function Home() {
                 >
                     {loading ? 'Login...' : loggedIn ? 'Logged in' : 'Login'}
                 </button>
-                <p
+                <pre
                     onClick={() => setError({ ...error, visible: false })}
                     className={error.visible ? 'error active' : 'error'}
                 >
                     {error.text}
-                </p>
-                <p
+                </pre>
+                <pre
                     onClick={() => setResponse({ ...response, visible: false })}
                     className={response.visible ? 'response active' : 'response'}
                 >
                     {response.text}
-                </p>
+                </pre>
             </main>
         </div>
     )

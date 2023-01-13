@@ -53,14 +53,14 @@ export default function handler(
                         for (const user of notFollowingYou) {
                             try {
                                 await ig.friendship.destroy(user.pk);
-                                res?.socket?.server?.io?.emit('unfollow', `Unfollowed ${user.username}`);
+                                res?.socket?.server?.io?.emit('unfollow', `Unfollowed:\n${user.username}`);
                             } catch {
                                 failedUnfollow += `${user.username}\n`;
-                                res?.socket?.server?.io?.emit('unfollowError', `Did not unfollow ${user.username}`);
+                                res?.socket?.server?.io?.emit('unfollowError', `Did not unfollow:\n${user.username}`);
                             }
                         }
                         if (failedUnfollow) {
-                            res?.socket?.server?.io?.emit('doneError', `Done with some issues...\nUsers who could not be unfollowed:\n${failedUnfollow}`);
+                            res?.socket?.server?.io?.emit('doneError', `Done with some issues...\n\nUsers who could not be unfollowed:\n${failedUnfollow}`);
                         } else {
                             res?.socket?.server?.io?.emit('done', `Done without issues!`);
                         }
